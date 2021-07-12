@@ -5,7 +5,7 @@ function Header(props){
 	const history = useHistory();
 
 	function signOut(){
-    localStorage.removeItem('token');
+    localStorage.removeItem('jwt');
     history.push('/sign-in');
   }
 	

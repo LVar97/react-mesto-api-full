@@ -77,10 +77,16 @@ class App extends React.Component {
           const userData = {
             email: res.email
           }
+          const currentUser = {
+            name: res.name,
+            about: res.about,
+            avatar: res.avatar
+          }
             // авторизуем пользователя
           this.setState({
             loggedIn: true,
             userData,
+            currentUser
           }, () => {
             // обернём App.js в withRouter
             // так, что теперь есть доступ к этому методу
@@ -88,7 +94,7 @@ class App extends React.Component {
           });
         }
       })
-      .catch((err) => console.log(err)); 
+      .catch((err) => console.log(err));
     }
   }
 
@@ -236,6 +242,7 @@ class App extends React.Component {
           this.handleLogin();
           this.props.history.push('/main');
         })
+        this.tokenCheck()
       }  
     })
     .catch(err => {

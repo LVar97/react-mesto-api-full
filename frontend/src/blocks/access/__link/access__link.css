@@ -1,0 +1,26 @@
+.access__link{
+	width: 360px;
+	min-height: 50px;
+	margin: 0 auto;
+	background: #FFFFFF;
+	border-radius: 2px;
+
+	font-size: 18px;
+	line-height: 22px;
+	text-align: center;
+	color: #000000;
+	transition: opacity 1s ease;
+}
+
+.access__link:hover{
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+@media all and (max-width: 895px){
+	.access__link{
+		max-width: 260px;
+		font-size: 16px;
+		line-height: 19px;
+	}
+}

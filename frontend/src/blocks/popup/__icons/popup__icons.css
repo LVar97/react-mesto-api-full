@@ -1,0 +1,11 @@
+.popup__icons{
+	width: 120px;
+	height: 120px;
+	margin: 60px 155px 32px;
+}
+
+@media all and (max-width: 895px){
+	.popup__icons{
+		margin: 50px 80px 40px;
+	}
+}

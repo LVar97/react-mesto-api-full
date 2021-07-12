@@ -1,0 +1,10 @@
+.access__form{
+	max-width: 360px;
+	margin: 0 auto;
+}
+
+@media all and (max-width: 895px){
+	.access__form{
+		max-width: 260px;
+	}
+}

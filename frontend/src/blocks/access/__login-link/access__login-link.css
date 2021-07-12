@@ -1,0 +1,23 @@
+.access__login-link{
+	padding-left: 3px;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 17px;
+	/* identical to box height */
+
+	/* text-align: center; */
+	text-decoration: none;
+	color: #FFFFFF;
+	transition: opacity 1s ease;
+}
+
+.access__login-link:hover{
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+@media all and (max-width: 895px){
+	.access__login-link{
+		max-width: 260px;
+	}
+}

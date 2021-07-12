@@ -1,0 +1,11 @@
+.element__heading{
+	display: flex;
+	justify-content: space-between;
+	justify-items: center;
+
+	position: absolute;
+	left: 21px;
+	/* bottom: 31px; */
+	bottom: 23px;
+	right: 30px;
+}

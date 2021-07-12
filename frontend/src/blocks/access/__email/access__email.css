@@ -1,0 +1,21 @@
+.access__email{
+	width: 358px;
+	min-height: 14px;
+	margin: 0 auto;
+	background-color: black;
+	border: none;
+	border-bottom: 2px solid #CCCCCC;
+	margin-bottom: 30px;
+	padding: 0;
+	padding-bottom: 13px;
+
+	font-size: 14px;
+	line-height: 17px;
+	color: #FFFFFF;
+}
+
+@media all and (max-width: 895px){
+	.access__email{
+		max-width: 260px;
+	}
+}

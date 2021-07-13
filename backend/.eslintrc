@@ -2,12 +2,6 @@
   "extends": "airbnb-base",
   "rules": {
     "no-underscore-dangle": ["error", {"allow": ["_id"] }],
-    // "no-useless-escape": ["error", {"allow": [""] }]
-    "func-names": ["error", "never"],
-    // "prefer-arrow-callback": [ "error", { "allowNamedFunctions": true } ],
-    // "prefer-arrow-callback": "error",
-    // "import/no-extraneous-dependencies": ["error", {"peerDependencies": true}]
-    // "prefer-arrow-callback": [ "error", { "allowUnboundThis": false } ],
-    "prefer-arrow-callback": [ "error", { "allowNamedFunctions": true} ,  {"allowUnboundThis": false} ]
+    "func-names": ["error", "never"]
   }
 }

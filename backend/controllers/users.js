@@ -33,7 +33,7 @@ module.exports.createUser = (req, res, next) => {
 // возвращает всех пользователей
 module.exports.getUser = (req, res, next) => {
   User.find({})
-    .then((user) => res.send( user ))
+    .then((user) => res.send(user))
     .catch(next);
 };
 
@@ -58,7 +58,7 @@ module.exports.getUserId = (req, res, next) => {
 module.exports.getUserInfo = (req, res, next) => {
   User.findById(req.user)
     .then((user) => {
-      res.send( user );
+      res.send(user);
     })
     .catch(next);
 };
@@ -75,7 +75,7 @@ module.exports.patchUser = (req, res, next) => {
       if (user === null) {
         throw new NotFoundError('Запрашиваемый пользователь не найден');
       } else {
-        res.send( user );
+        res.send(user);
       }
     })
     .catch((err) => {
@@ -97,7 +97,7 @@ module.exports.patchAvatar = (req, res, next) => {
       if (user === null) {
         throw new NotFoundError('Запрашиваемый пользователь не найден');
       } else {
-        res.send( user );
+        res.send(user);
       }
     })
     .catch((err) => {

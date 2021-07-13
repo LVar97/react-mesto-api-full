@@ -4,12 +4,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
+const cors = require('cors');
 const routerCards = require('./routes/cards');
 const routerUser = require('./routes/users');
 const { login, createUser } = require('./controllers/users');
 const auth = require('./middlewares/auth');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
-const cors = require('cors');
 
 // подключаемся к серверу mongo
 mongoose.connect('mongodb://localhost:27017/mestodb', {
@@ -24,7 +24,6 @@ const { PORT = 3000 } = process.env;
 const app = express();
 app.use(cors());
 app.options('*', cors());
-
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

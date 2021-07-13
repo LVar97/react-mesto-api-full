@@ -8,8 +8,8 @@ module.exports.createCard = (req, res, next) => {
   const { name, link } = req.body;
   const owner = req.user._id;
 
-  Card.create({ name, link, owner  })
-    .then((card) => res.send(card ))
+  Card.create({ name, link, owner })
+    .then((card) => res.send(card))
     .catch((err) => {
       if (err.name === 'ValidationError') {
         throw new IncorrectDataError('Переданы некорректные данные');
@@ -21,7 +21,7 @@ module.exports.createCard = (req, res, next) => {
 // возвращает все карточки
 module.exports.getCards = (req, res, next) => {
   Card.find({})
-    .then((card) => res.send( card ))
+    .then((card) => res.send(card))
     .catch(next);
 };
 
@@ -37,13 +37,10 @@ module.exports.deleteCardId = (req, res, next) => {
         } else {
           console.log();
           if (req.user._id !== card.owner.toString()) {
-            console.log(req.user._id);
             throw new AccessIsDenied('Не ваша карточка');
           } else {
             Card.findByIdAndRemove(req.params.cardsId)
               .then(res.send({ message: 'card deleted' }));
-              // .then(() => {console.log(req.user._id)});
-
           }
         }
       })
@@ -66,12 +63,11 @@ module.exports.likeCard = (req, res, next) => {
             { $addToSet: { likes: req.user._id } }, // добавить _id в массив, если его там нет
             { new: true },
           )
-            .then((newcard) => res.send( newcard));
+            .then((newcard) => res.send(newcard));
         }
       })
       .catch(next);
   }
-
 };
 
 // DELETE /cards/:cardId/likes — убрать лайк с карточки
@@ -89,7 +85,7 @@ module.exports.dislikeCard = (req, res, next) => {
             { $pull: { likes: req.user._id } }, // убрать _id из массива
             { new: true },
           )
-            .then((newcard) =>  res.send( newcard ));
+            .then((newcard) => res.send(newcard));
         }
       })
       .catch(next);
